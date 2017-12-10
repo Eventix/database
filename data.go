@@ -29,9 +29,10 @@ type Base struct {
 	immutable bool
 	editable  bool
 	lm        sync.Map
-	db 	      *sql.DB
 
 	cns string
+
+	db *sql.DB
 }
 
 func New(db *sql.DB, table string, columns []string, keyname string, single LoaderFunc, isImmutable, canBeEdited bool) *Base {
